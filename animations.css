@@ -1,0 +1,540 @@
+/* ========================= */
+/* GLOBAL TRANSITIONS */
+/* ========================= */
+
+a,
+button,
+.favorite-card,
+.mood-img,
+.secret-button,
+.about-button{
+
+  transition:
+  var(--transition);
+
+}
+
+
+/* ========================= */
+/* FADE IN */
+/* ========================= */
+
+.fade-in{
+
+  opacity:0;
+
+  transform:translateY(30px);
+
+  animation:
+  fadeIn 1s ease forwards;
+
+}
+
+@keyframes fadeIn{
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+  }
+
+}
+
+
+/* ========================= */
+/* FLOATING */
+/* ========================= */
+
+.float{
+
+  animation:
+  float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+  0%{
+
+    transform:
+    translateY(0px);
+
+  }
+
+  50%{
+
+    transform:
+    translateY(-10px);
+
+  }
+
+  100%{
+
+    transform:
+    translateY(0px);
+
+  }
+
+}
+
+
+/* ========================= */
+/* SOFT ROTATION */
+/* ========================= */
+
+.soft-rotate{
+
+  animation:
+  softRotate 8s ease-in-out infinite;
+
+}
+
+@keyframes softRotate{
+
+  0%{
+
+    transform:
+    rotate(-2deg);
+
+  }
+
+  50%{
+
+    transform:
+    rotate(2deg);
+
+  }
+
+  100%{
+
+    transform:
+    rotate(-2deg);
+
+  }
+
+}
+
+
+/* ========================= */
+/* NAVBAR APPEAR */
+/* ========================= */
+
+.navbar{
+
+  animation:
+  navbarFade 1s ease;
+
+}
+
+@keyframes navbarFade{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(-20px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+  }
+
+}
+
+
+/* ========================= */
+/* HERO ELEMENTS */
+/* ========================= */
+
+.hero-content{
+
+  animation:
+  heroFade 1.2s ease;
+
+}
+
+.hero-visual{
+
+  animation:
+  heroImage 1.4s ease;
+
+}
+
+@keyframes heroFade{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+  }
+
+}
+
+@keyframes heroImage{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateX(40px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateX(0);
+
+  }
+
+}
+
+
+/* ========================= */
+/* HOVER LIFT */
+/* ========================= */
+
+.favorite-card:hover,
+.polaroid-card:hover,
+.secret-button:hover,
+.about-button:hover,
+.player-controls button:hover{
+
+  transform:
+  translateY(-6px);
+
+}
+
+
+/* ========================= */
+/* IMAGE HOVER */
+/* ========================= */
+
+.favorite-card img,
+.mood-img,
+.polaroid-card img{
+
+  transition:
+  transform 0.5s ease;
+
+}
+
+.favorite-card:hover img,
+.mood-img:hover,
+.polaroid-card:hover img{
+
+  transform:
+  scale(1.03);
+
+}
+
+
+/* ========================= */
+/* MOODBOARD PARALLAX FEEL */
+/* ========================= */
+
+.mood-img{
+
+  cursor:pointer;
+
+}
+
+.mood-img:hover{
+
+  transform:
+  scale(1.02)
+  rotate(1deg);
+
+}
+
+
+/* ========================= */
+/* BUTTON GLOW */
+/* ========================= */
+
+.about-button,
+.secret-button{
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+.about-button::before,
+.secret-button::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100%;
+
+  background:
+  linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+
+  transition:
+  0.8s;
+
+}
+
+.about-button:hover::before,
+.secret-button:hover::before{
+
+  left:100%;
+
+}
+
+
+/* ========================= */
+/* STICKERS FLOAT */
+/* ========================= */
+
+.floating-sticker{
+
+  position:absolute;
+
+  animation:
+  stickerFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes stickerFloat{
+
+  0%{
+
+    transform:
+    translateY(0px)
+    rotate(0deg);
+
+  }
+
+  50%{
+
+    transform:
+    translateY(-12px)
+    rotate(3deg);
+
+  }
+
+  100%{
+
+    transform:
+    translateY(0px)
+    rotate(0deg);
+
+  }
+
+}
+
+
+/* ========================= */
+/* PLAYLIST BAR */
+/* ========================= */
+
+.player-bar{
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+.player-bar::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:40%;
+  height:100%;
+
+  background:
+  var(--navy);
+
+  border-radius:999px;
+
+  animation:
+  musicMove 4s linear infinite;
+
+}
+
+@keyframes musicMove{
+
+  0%{
+
+    width:0%;
+
+  }
+
+  50%{
+
+    width:70%;
+
+  }
+
+  100%{
+
+    width:40%;
+
+  }
+
+}
+
+
+/* ========================= */
+/* SECTION REVEAL */
+/* ========================= */
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+  translateY(60px);
+
+  transition:
+  1s ease;
+
+}
+
+.reveal.active{
+
+  opacity:1;
+
+  transform:
+  translateY(0);
+
+}
+
+
+/* ========================= */
+/* SECRET PAGE FADE */
+/* ========================= */
+
+.secret-page{
+
+  animation:
+  secretFade 1.2s ease;
+
+}
+
+@keyframes secretFade{
+
+  from{
+
+    opacity:0;
+
+  }
+
+  to{
+
+    opacity:1;
+
+  }
+
+}
+
+
+/* ========================= */
+/* SMOOTH IMAGE ENTRANCE */
+/* ========================= */
+
+.mood-img,
+.favorite-card,
+.diary-card{
+
+  animation:
+  cardAppear 1s ease;
+
+}
+
+@keyframes cardAppear{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(20px)
+    scale(0.96);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0)
+    scale(1);
+
+  }
+
+}
+
+
+/* ========================= */
+/* TEXT FADE */
+/* ========================= */
+
+.hero-subtitle,
+.hero-description,
+.quote-translation{
+
+  animation:
+  textFade 2s ease;
+
+}
+
+@keyframes textFade{
+
+  from{
+
+    opacity:0;
+
+  }
+
+  to{
+
+    opacity:1;
+
+  }
+
+}
